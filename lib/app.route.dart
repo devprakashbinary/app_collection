@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:app_collection/app.widget.dart';
 import 'package:app_collection/module/home/home.route.dart';
+import 'package:app_collection/module/facebook/facebook.route.dart';
 
 class AppModule extends MainModule {
 
@@ -13,6 +14,7 @@ class AppModule extends MainModule {
   @override
   List<Router> get routers => [
     Router('/', module: HomeModule()),
+    Router('/facebook', module: FacebookModule()),
   ];
 
   // Provide the root widget associated with your module

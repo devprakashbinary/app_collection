@@ -13,7 +13,7 @@ class AppListCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 15),
       child: Column(
         children: <Widget>[
-          header(),
+          header(context),
           SizedBox(height: 10),
           thumbnailSlider()
         ],
@@ -21,7 +21,7 @@ class AppListCard extends StatelessWidget {
     );
   }
 
-  Widget header() {
+  Widget header(BuildContext context) {
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,7 +69,9 @@ class AppListCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(18.0)),
             color: Colors.white,
             padding: EdgeInsets.all(8.0),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/${appCard.appPath}');
+            },
             child: Text(
               "View App".toUpperCase(),
               style: TextStyle(
