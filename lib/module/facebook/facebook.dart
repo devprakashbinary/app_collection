@@ -3,6 +3,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:app_collection/module/facebook/widgets/statusbox.dart';
 import 'package:app_collection/module/facebook/widgets/facebook_tabs.dart';
 import 'package:app_collection/module/facebook/widgets/create_room_slider.dart';
+import 'package:app_collection/module/facebook/widgets/story_list.dart';
 
 class Facebook extends StatefulWidget {
   @override
@@ -37,7 +38,8 @@ class _FacebookState extends State<Facebook> {
           children: <Widget>[
             StatusBox(),
             FacebookTabs(),
-            CreateRoomSlider()
+            CreateRoomSlider(),
+            StoryList()
           ],
         ),
       )
