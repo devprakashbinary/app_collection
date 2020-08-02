@@ -26,7 +26,7 @@ class CreateStoryCard extends StatelessWidget {
             ),
             Positioned(
               bottom: 1.0,
-              left: 10.0,
+              left: 22.0,
               child: Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,8 +47,8 @@ class CreateStoryCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 7),
-                    Text("Create a Story", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
+                    SizedBox(height: 9),
+                    Text("Create a Story", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),)
                   ],
                 ),
               ),
