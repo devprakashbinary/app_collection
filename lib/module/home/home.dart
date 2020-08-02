@@ -29,6 +29,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: Colors.redAccent,
         centerTitle: true,
         title: Text("Prakash Apps Collection"),

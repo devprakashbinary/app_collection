@@ -41,7 +41,7 @@ class AppListCard extends StatelessWidget {
               children: <Widget>[
                 Text('${appCard.name}', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 SizedBox(height: 5),
-                Text('${appCard.title}', style: TextStyle(color: Color(0xffa8acb3), fontSize: 16)),
+                Text('${appCard.title}', style: TextStyle(color: Color(0xffa8acb3), fontSize: 16), overflow: TextOverflow.ellipsis,),
                 SizedBox(height: 5),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
