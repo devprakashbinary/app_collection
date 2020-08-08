@@ -27,21 +27,36 @@ class _StoryListState extends State<StoryList> {
   }
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-      child: Row(
+    return Container(
+      decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(color: Color(0xffc9cbd0), width: 8))
+      ),
+      child: Stack(
         children: <Widget>[
-          CreateStoryCard(),
-          SizedBox(width: 15),
-          Row(
-            children: stories.map((story) => Row(
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Row(
               children: <Widget>[
-                StoryThumbnailCard(storyThumbnail: story),
-                SizedBox(width: 15)
+                CreateStoryCard(),
+                SizedBox(width: 10),
+                Row(
+                  children: stories.map((story) => Row(
+                    children: <Widget>[
+                      StoryThumbnailCard(storyThumbnail: story),
+                      SizedBox(width: 10)
+                    ],
+                  )).toList(),
+                )
               ],
-            )).toList(),
-          )
+            ),
+          ),
+//        AnimatedPositioned(
+//          top: 15,
+//          left: 15,
+//          child:  CreateStoryCard(),
+//          duration: Duration(microseconds: 1000),
+//        ),
         ],
       ),
     );

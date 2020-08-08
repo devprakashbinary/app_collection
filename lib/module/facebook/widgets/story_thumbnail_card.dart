@@ -7,13 +7,13 @@ class StoryThumbnailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(15.0),
+      borderRadius: BorderRadius.circular(10.0),
       child: Container(
-        height: 200,
-        width: 120,
+        height: 180,
+        width: 100,
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: BorderRadius.circular(0.0),
           image: DecorationImage(image: NetworkImage(storyThumbnail.thumbnailUrl), fit: BoxFit.fill)
         ),
         child: Column(
@@ -34,7 +34,7 @@ class StoryThumbnailCard extends StatelessWidget {
                     child: Image(image: NetworkImage(storyThumbnail.userImage), fit: BoxFit.fill)),
               ),
             ),
-            Text('${storyThumbnail.userName}', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, shadows: <Shadow>[
+            Text('${storyThumbnail.userName}', style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold, shadows: <Shadow>[
               Shadow(
                 offset: Offset(1.0, 1.0),
                 blurRadius: 2.0,

@@ -17,10 +17,10 @@ class FacebookTabs extends StatelessWidget {
               children: <Widget>[
                 Image(
                   image: AssetImage('assets/images/icons/ios-live-video.png'),
-                  height: 20,
+                  height: 18,
                 ),
                 SizedBox(width: 5),
-                Text("Live", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))
+                Text("Live", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14))
               ],
             ),
           ),
@@ -39,7 +39,7 @@ class FacebookTabs extends StatelessWidget {
                       height: 20,
                     ),
                     SizedBox(width: 5),
-                    Text("Photo", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))
+                    Text("Photo", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14))
                   ],
                 ),
               ),
@@ -55,7 +55,7 @@ class FacebookTabs extends StatelessWidget {
                     height: 15,
                   ),
                   SizedBox(width: 5),
-                  Text("Room", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))
+                  Text("Room", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14))
                 ],
               ),
             ),

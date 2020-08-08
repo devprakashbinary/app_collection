@@ -4,6 +4,9 @@ import 'package:app_collection/module/facebook/widgets/statusbox.dart';
 import 'package:app_collection/module/facebook/widgets/facebook_tabs.dart';
 import 'package:app_collection/module/facebook/widgets/create_room_slider.dart';
 import 'package:app_collection/module/facebook/widgets/story_list.dart';
+import 'package:app_collection/module/facebook/widgets/facebook_group_post_card.dart';
+import 'package:app_collection/core/mocks/facebook_group_post.dart';
+import 'package:app_collection/core/interface/facebook_group_post.interface.dart';
 
 class Facebook extends StatefulWidget {
   @override
@@ -39,7 +42,8 @@ class _FacebookState extends State<Facebook> {
             StatusBox(),
             FacebookTabs(),
             CreateRoomSlider(),
-            StoryList()
+            StoryList(),
+            FacebookGroupPostCard(facebookGroupPost: FacebookGroupPost.fromJson(FacebookGroupPostData.data))
           ],
         ),
       )
