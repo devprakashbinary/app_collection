@@ -7,13 +7,13 @@ class StoryThumbnailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
+      borderRadius: BorderRadius.circular(15.0),
       child: Container(
-        height: 250,
-        width: 150,
+        height: 200,
+        width: 120,
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(15.0),
           image: DecorationImage(image: NetworkImage(storyThumbnail.thumbnailUrl), fit: BoxFit.fill)
         ),
         child: Column(
@@ -23,11 +23,11 @@ class StoryThumbnailCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(100),
               child: Container(
-                width: 60,
-                height: 60,
+                width: 40,
+                height: 40,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
-                  border: Border.all(color: Color(0xff3875e9), width: 5, style: BorderStyle.solid)
+                  border: Border.all(color: Color(0xff3875e9), width: 3, style: BorderStyle.solid)
                 ),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(100),
