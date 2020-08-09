@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:app_collection/module/facebook/facebook-home.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:app_collection/module/facebook/widgets/statusbox.dart';
-import 'package:app_collection/module/facebook/widgets/facebook_tabs.dart';
-import 'package:app_collection/module/facebook/widgets/create_room_slider.dart';
-import 'package:app_collection/module/facebook/widgets/story_list.dart';
-import 'package:app_collection/module/facebook/widgets/facebook_group_post_card.dart';
-import 'package:app_collection/core/mocks/facebook_group_post.dart';
-import 'package:app_collection/core/interface/facebook_group_post.interface.dart';
 
 class Facebook extends StatefulWidget {
   @override
@@ -14,39 +9,85 @@ class Facebook extends StatefulWidget {
 }
 
 class _FacebookState extends State<Facebook> {
+  PersistentTabController _bottomTabController = PersistentTabController(initialIndex: 0);
+  List<Widget> _buildScreens() {
+    return [
+      FacebookHome(),
+      Container(),
+      Container(),
+      Container(),
+      Container(),
+      Container(),
+    ];
+  }
+
+  List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: Icon(Entypo.home),
+        activeColor: Color(0xff3875e8),
+        inactiveColor: Color(0xff66676b),
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Ionicons.md_tv),
+        activeColor: Color(0xff3875e8),
+        inactiveColor: Color(0xff66676b),
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Entypo.shop),
+        activeColor: Color(0xff3875e8),
+        inactiveColor: Color(0xff66676b),
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(EvilIcons.user, size: 26,),
+        activeColor: Color(0xff3875e8),
+        inactiveColor: Color(0xff66676b),
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Ionicons.ios_notifications_outline),
+        activeColor: Color(0xff3875e8),
+        inactiveColor: Color(0xff66676b),
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(MaterialIcons.menu),
+        activeColor: Color(0xff3875e8),
+        inactiveColor: Color(0xff66676b),
+      ),
+    ];
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      body: PersistentTabView(
+        controller: _bottomTabController,
+        screens: _buildScreens(),
+        items: _navBarsItems(),
+        navBarHeight: 40,
+        confineInSafeArea: true,
         backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        elevation: 0.0,
-        title: Text("facebook", style: TextStyle(color: Color(0xff3875e9), fontWeight: FontWeight.bold, fontSize: 26)),
-        actions: <Widget>[
-          GestureDetector(
-            onTap: () {},
-            child: Image(image: AssetImage('assets/images/icons/ios-circular-search-solid.png'), width: 40, height: 40),
-          ),
-          SizedBox(width: 10),
-          GestureDetector(
-            onTap: () {},
-            child: Image(image: AssetImage('assets/images/icons/ios-circular-chat-solid.png'), width: 40, height: 40),
-          ),
-          SizedBox(width: 15),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            StatusBox(),
-            FacebookTabs(),
-            CreateRoomSlider(),
-            StoryList(),
-            FacebookGroupPostCard(facebookGroupPost: FacebookGroupPost.fromJson(FacebookGroupPostData.data))
-          ],
+        handleAndroidBackButtonPress: true,
+        resizeToAvoidBottomInset: true,
+        stateManagement: true,
+        hideNavigationBarWhenKeyboardShows: true,
+        decoration: NavBarDecoration(
+          borderRadius: BorderRadius.circular(0.0),
+          colorBehindNavBar: Colors.white,
         ),
-      )
+        popAllScreensOnTapOfSelectedTab: true,
+        itemAnimationProperties: ItemAnimationProperties(
+          duration: Duration(milliseconds: 200),
+          curve: Curves.ease,
+        ),
+        screenTransitionAnimation: ScreenTransitionAnimation(
+          animateTabTransition: true,
+          curve: Curves.ease,
+          duration: Duration(milliseconds: 200),
+        ),
+        navBarStyle: NavBarStyle.style3,
+        // Choose the nav bar style with this property.
+      ),
     );
   }
 }

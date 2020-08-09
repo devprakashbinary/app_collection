@@ -34,6 +34,7 @@ dev_dependencies:
   video_player: ^0.10.11+2
   readmore: ^1.0.0
   sliding_up_panel: ^1.0.2
+  persistent_bottom_nav_bar: ^2.0.5
 
 
 # For information on the generic Dart part of this file, see the
