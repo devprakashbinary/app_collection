@@ -4,7 +4,7 @@ import 'package:app_collection/module/facebook/widgets/statusbox.dart';
 import 'package:app_collection/module/facebook/widgets/facebook_tabs.dart';
 import 'package:app_collection/module/facebook/widgets/create_room_slider.dart';
 import 'package:app_collection/module/facebook/widgets/story_list.dart';
-import 'package:app_collection/module/facebook/widgets/facebook_group_post_card.dart';
+import 'package:app_collection/module/facebook/widgets/facebook_post_card.dart';
 import 'package:app_collection/core/mocks/facebook_group_post.dart';
 import 'package:app_collection/core/interface/facebook_group_post.interface.dart';
 
@@ -44,7 +44,9 @@ class _FacebookHomeState extends State<FacebookHome> {
                   FacebookTabs(),
                   CreateRoomSlider(),
                   StoryList(),
-                  FacebookGroupPostCard(facebookGroupPost: FacebookGroupPost.fromJson(FacebookGroupPostData.data))
+                  Column(
+                    children: FacebookGroupPostData.list.map((e) => FacebookPostCard(facebookGroupPost: FacebookGroupPost.fromJson(e))).toList(),
+                  )
                 ],
               ),
             )

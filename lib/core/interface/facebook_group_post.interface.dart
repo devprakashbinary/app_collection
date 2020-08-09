@@ -1,26 +1,32 @@
 class FacebookGroupPost {
+  String id;
   String groupName;
   String postContent;
   String contentDescription;
   String mainContentType;
+  String postType;
   String postTimeLong;
   User user;
   LikeCommentStatus likeCommentStatus;
 
   FacebookGroupPost(
-      {this.groupName,
+      {this.id,
+        this.groupName,
         this.postContent,
         this.contentDescription,
         this.mainContentType,
+        this.postType,
         this.postTimeLong,
         this.user,
         this.likeCommentStatus});
 
   FacebookGroupPost.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     groupName = json['groupName'];
     postContent = json['postContent'];
     contentDescription = json['contentDescription'];
     mainContentType = json['mainContentType'];
+    postType = json['postType'];
     postTimeLong = json['postTimeLong'];
     user = json['user'] != null ? new User.fromJson(json['user']) : null;
     likeCommentStatus = json['likeCommentStatus'] != null
@@ -30,10 +36,12 @@ class FacebookGroupPost {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
     data['groupName'] = this.groupName;
     data['postContent'] = this.postContent;
     data['contentDescription'] = this.contentDescription;
     data['mainContentType'] = this.mainContentType;
+    data['postType'] = this.postType;
     data['postTimeLong'] = this.postTimeLong;
     if (this.user != null) {
       data['user'] = this.user.toJson();
